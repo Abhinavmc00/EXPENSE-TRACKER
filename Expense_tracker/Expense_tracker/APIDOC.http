@@ -1,0 +1,94 @@
+# API CALL FOR USER REGISTRATION
+###
+POST  http://127.0.0.1:8000/user/
+Content-Type: application/json
+
+{
+    "username":"xyz",
+    "email":"xyz@gmail.com",
+    "password":"password@123"
+}
+
+# API CALL FOR CREATING EXPENSES
+###
+POST  http://127.0.0.1:8000/expenses/
+Content-Type: application/json
+Authorization: Basic xyz:password@123
+
+{
+    "title":"Bill",
+    "amount":"200",
+    "category":"Food",
+    "payment":"Card"
+}
+
+# API CALL FOR LISTING EXPENSE
+###
+GET http://127.0.0.1:8000/expenses/?ordering=amount
+Authorization: Basic xyz:password@123
+
+
+# API CALL FOR UPDATING
+###
+PUT http://127.0.0.1:8000/expenses/6/
+Content-Type: application/json
+Authorization: Basic xyz:password@123
+
+{
+    "title":"Bill",
+    "amount":"200",
+    "category":"Food",
+    "payment":"UPI"
+}
+
+# API CALL FOR PARTIAL UPDATION
+
+###
+PATCH http://127.0.0.1:8000/expenses/2/
+Content-Type: application/json
+Authorization: Basic abc:password@123
+
+{
+    "amount": "1500"
+}
+
+# API CALL FOR DELETEING 
+###
+DELETE http://127.0.0.1:8000/expenses/3/
+Authorization: Basic abc:password@123
+
+
+
+# API CALL FOR SERACHING ORDERING EXPENSES
+
+###
+GET http://127.0.0.1:8000/expenses/?search=Bill
+Authorization: Basic xyz:password@123
+
+
+###
+GET http://127.0.0.1:8000/expenses/?search=Bill
+Authorization: Basic abc:password@123
+
+###
+GET http://127.0.0.1:8000/expenses/?search=Travel
+Authorization: Basic abc:password@123
+
+###
+GET http://127.0.0.1:8000/expenses/?ordering=amount
+Authorization: Basic abc:password@123
+
+###
+GET http://127.0.0.1:8000/expenses/?ordering=-amount
+Authorization: Basic abc:password@123
+
+###
+GET http://127.0.0.1:8000/expenses/?ordering=-created_at
+Authorization: Basic abc:password@123
+
+
+###
+GET http://127.0.0.1:8000/expenses/?category=Food&search=Bill&ordering=-amount
+Authorization: Basic abc:password@123
+
+
